@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tách hàm kiểm tra
+    function isPrime(number){
+        if(number<2){
+            return false;
+        }else{
+            for(i=2;i <= Math.sqrt(number);i++){
+                if(number % i == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    //hiển thị ra màn hình. trong hiển thị có thể dùng kiểm tra
+    function displayPrimeList(quality){
+        let count = 0;
+        let i = 2;
+        // let sum=0;
+        while(count<quality){
+            if(isPrime(i)==true){
+                document.write(i+" ");
+                count++;
+                // sum=sum+i
+            }
+            i++;
+        }
+        //return sum;
+    }
+    let quality =+prompt("Nhập số lượng số nguyên tố bạn nhâph");
+    displayPrimeList(quality);
+</script>
+</body>
+</html>
